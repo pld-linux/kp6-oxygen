@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.1.5
+%define		kdeplasmaver	6.2.0
 %define		qtver		5.15.2
 %define		kpname		oxygen
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and KDE 4
 Name:		kp6-%{kpname}
-Version:	6.1.5
+Version:	6.2.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	98165c9812d58be4dd2919b522a6170c
+# Source0-md5:	69cb74ff06deb04af57a3bfd55f3486d
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -24,6 +24,7 @@ BuildRequires:	kf6-ki18n-devel
 BuildRequires:	kf6-kservice-devel
 BuildRequires:	kf6-kwidgetsaddons-devel
 BuildRequires:	kf6-kwindowsystem-devel
+BuildRequires:	kp6-libplasma-devel >= %{version}
 BuildRequires:	ninja
 BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
@@ -99,3 +100,45 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root)%{_libdir}/qt6/plugins/styles/oxygen6.so
 %{_desktopdir}/kcm_oxygendecoration.desktop
 %{_datadir}/metainfo/org.kde.oxygen.appdata.xml
+%{_datadir}/plasma/desktoptheme/oxygen/colors
+%{_datadir}/plasma/desktoptheme/oxygen/dialogs/background.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/metadata.json
+%{_datadir}/plasma/desktoptheme/oxygen/opaque/dialogs/background.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/opaque/dialogs/krunner.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/extender-background.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/panel-background.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/tooltip.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/plasmarc
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/action-overlays.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/actionbutton.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/analog_meter.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/arrows.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/background.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/bar_meter_horizontal.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/bar_meter_vertical.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/branding.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/busywidget.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/button.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/clock.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/containment-controls.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/dragger.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/extender-background.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/extender-dragger.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/frame.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/glowbar.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/line.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/lineedit.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/media-delegate.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/monitor.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/pager.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/panel-background.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/plot-background.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/scrollbar.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/scrollwidget.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/slider.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/tabbar.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/tasks.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/timer.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/tooltip.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/translucentbackground.svgz
+%{_datadir}/plasma/desktoptheme/oxygen/widgets/viewitem.svgz
