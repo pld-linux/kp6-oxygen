@@ -89,26 +89,32 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/color-schemes/Oxygen.colors
 %{_datadir}/color-schemes/OxygenCold.colors
 %attr(755,root,root) %{_bindir}/oxygen-demo6
-%attr(755,root,root)%{_bindir}/oxygen-settings6
-%attr(755,root,root)%{_libdir}/liboxygenstyle6.so.*.*
+%attr(755,root,root) %{_bindir}/oxygen-settings6
+%attr(755,root,root) %{_libdir}/liboxygenstyle6.so.*.*
 %ghost %{_libdir}/liboxygenstyle6.so.6
-%attr(755,root,root)%{_libdir}/liboxygenstyleconfig6.so.*.*
+%attr(755,root,root) %{_libdir}/liboxygenstyleconfig6.so.*.*
 %ghost %{_libdir}/liboxygenstyleconfig6.so.6
-%attr(755,root,root)%{_libdir}/qt6/plugins/kstyle_config/kstyle_oxygen_config.so
-%attr(755,root,root)%{_libdir}/qt6/plugins/org.kde.kdecoration2.kcm/kcm_oxygendecoration.so
-%attr(755,root,root)%{_libdir}/qt6/plugins/org.kde.kdecoration2/org.kde.oxygen.so
-%attr(755,root,root)%{_libdir}/qt6/plugins/styles/oxygen6.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/kstyle_config/kstyle_oxygen_config.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration2.kcm/kcm_oxygendecoration.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration2/org.kde.oxygen.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/styles/oxygen6.so
 %{_desktopdir}/kcm_oxygendecoration.desktop
 %{_datadir}/metainfo/org.kde.oxygen.appdata.xml
+%dir %{_datadir}/plasma/desktoptheme/oxygen
 %{_datadir}/plasma/desktoptheme/oxygen/colors
+%dir %{_datadir}/plasma/desktoptheme/oxygen/dialogs
 %{_datadir}/plasma/desktoptheme/oxygen/dialogs/background.svgz
 %{_datadir}/plasma/desktoptheme/oxygen/metadata.json
+%dir %{_datadir}/plasma/desktoptheme/oxygen/opaque
+%dir %{_datadir}/plasma/desktoptheme/oxygen/opaque/dialogs
 %{_datadir}/plasma/desktoptheme/oxygen/opaque/dialogs/background.svgz
 %{_datadir}/plasma/desktoptheme/oxygen/opaque/dialogs/krunner.svgz
+%dir %{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets
 %{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/extender-background.svgz
 %{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/panel-background.svgz
 %{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/tooltip.svgz
 %{_datadir}/plasma/desktoptheme/oxygen/plasmarc
+%dir %{_datadir}/plasma/desktoptheme/oxygen/widgets
 %{_datadir}/plasma/desktoptheme/oxygen/widgets/action-overlays.svgz
 %{_datadir}/plasma/desktoptheme/oxygen/widgets/actionbutton.svgz
 %{_datadir}/plasma/desktoptheme/oxygen/widgets/analog_meter.svgz
