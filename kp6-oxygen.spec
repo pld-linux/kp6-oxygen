@@ -7,7 +7,7 @@
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and KDE 4
 Name:		kp6-%{kpname}
 Version:	6.2.1
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -94,6 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/liboxygenstyle6.so.6
 %attr(755,root,root) %{_libdir}/liboxygenstyleconfig6.so.*.*
 %ghost %{_libdir}/liboxygenstyleconfig6.so.6
+%dir %{_libdir}/qt6/plugins/kstyle_config
 %attr(755,root,root) %{_libdir}/qt6/plugins/kstyle_config/kstyle_oxygen_config.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration2.kcm/kcm_oxygendecoration.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration2/org.kde.oxygen.so
