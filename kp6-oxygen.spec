@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.2.5
+%define		kdeplasmaver	6.3.0
 %define		qtver		5.15.2
 %define		kpname		oxygen
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and KDE 4
 Name:		kp6-%{kpname}
-Version:	6.2.5
+Version:	6.3.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	b30cb4e9a8e84ddaf783681a77c27764
+# Source0-md5:	f99353b4731a3468fb1d589fd7cb43a6
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -96,8 +96,8 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/liboxygenstyleconfig6.so.6
 %dir %{_libdir}/qt6/plugins/kstyle_config
 %attr(755,root,root) %{_libdir}/qt6/plugins/kstyle_config/kstyle_oxygen_config.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration2.kcm/kcm_oxygendecoration.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration2/org.kde.oxygen.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration3.kcm/kcm_oxygendecoration.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration3/org.kde.oxygen.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/styles/oxygen6.so
 %{_desktopdir}/kcm_oxygendecoration.desktop
 %{_datadir}/metainfo/org.kde.oxygen.appdata.xml
