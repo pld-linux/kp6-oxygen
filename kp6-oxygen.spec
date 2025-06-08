@@ -1,10 +1,12 @@
 #
 # Conditional build:
-%bcond_with	tests		# build with tests
+%bcond_with	tests		# test suite
+
 %define		kdeplasmaver	6.3.5
 %define		qtver		5.15.2
 %define		kpname		oxygen
-Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and KDE 4
+Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and 6
+Summary(pl.UTF-8):	Styl Plasmy i widżetów Qt oraz dekoracje okien dla Plasmy 5 i 6
 Name:		kp6-%{kpname}
 Version:	6.3.5
 Release:	1
@@ -12,7 +14,7 @@ License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	82ea0985cdd21f1051f5289bb3dea39d
-URL:		http://www.kde.org/
+URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	kf6-extra-cmake-modules >= 1.4.0
@@ -35,8 +37,10 @@ Obsoletes:	kp5-%{kpname} < 6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Plasma and Qt widget style and window decorations for Plasma 5 and KDE
-4 A plugin-based library to create window decorations.
+Plasma and Qt widget style and window decorations for Plasma 5 and 6.
+
+%description -l pl.UTF-8
+Styl Plasmy i widżetów Qt oraz dekoracje okien dla Plasmy 5 i 6.
 
 %package devel
 Summary:	Header files for %{kpname} development
@@ -62,6 +66,7 @@ Pliki nagłówkowe dla programistów używających %{kpname}.
 	-DKDE_INSTALL_DOCBUNDLEDIR=%{_kdedocdir} \
 	-DBUILD_QT5=OFF \
 	-DBUILD_QT6=ON
+
 %ninja_build -C build
 
 %if %{with tests}
@@ -70,6 +75,7 @@ ctest
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %ninja_install -C build
 
 %find_lang %{kpname} --all-name --with-kde
