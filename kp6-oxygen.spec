@@ -93,13 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
-%{_datadir}/plasma/look-and-feel/org.kde.oxygen
-%{_iconsdir}/KDE_Classic
-%{_datadir}/kstyle/themes/oxygen.themerc
-%{_iconsdir}/hicolor/256x256/apps/oxygen-settings.png
-%{_iconsdir}/Oxygen*
-%{_datadir}/color-schemes/Oxygen.colors
-%{_datadir}/color-schemes/OxygenCold.colors
 %attr(755,root,root) %{_bindir}/oxygen-demo6
 %attr(755,root,root) %{_bindir}/oxygen-settings6
 %attr(755,root,root) %{_libdir}/liboxygenstyle6.so.*.*
@@ -108,56 +101,20 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/liboxygenstyleconfig6.so.6
 %dir %{_libdir}/qt6/plugins/kstyle_config
 %attr(755,root,root) %{_libdir}/qt6/plugins/kstyle_config/kstyle_oxygen_config.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration3.kcm/kcm_oxygendecoration.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration3/org.kde.oxygen.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration3.kcm/kcm_oxygendecoration.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/styles/oxygen6.so
-%{_desktopdir}/kcm_oxygendecoration.desktop
+%{_datadir}/color-schemes/Oxygen.colors
+%{_datadir}/color-schemes/OxygenCold.colors
 %{_datadir}/metainfo/org.kde.oxygen.appdata.xml
-%dir %{_datadir}/plasma/desktoptheme/oxygen
-%{_datadir}/plasma/desktoptheme/oxygen/colors
-%dir %{_datadir}/plasma/desktoptheme/oxygen/dialogs
-%{_datadir}/plasma/desktoptheme/oxygen/dialogs/background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/metadata.json
-%dir %{_datadir}/plasma/desktoptheme/oxygen/opaque
-%dir %{_datadir}/plasma/desktoptheme/oxygen/opaque/dialogs
-%{_datadir}/plasma/desktoptheme/oxygen/opaque/dialogs/background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/opaque/dialogs/krunner.svgz
-%dir %{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets
-%{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/extender-background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/panel-background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/tooltip.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/plasmarc
-%dir %{_datadir}/plasma/desktoptheme/oxygen/widgets
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/action-overlays.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/actionbutton.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/analog_meter.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/arrows.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/bar_meter_horizontal.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/bar_meter_vertical.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/branding.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/busywidget.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/button.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/clock.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/containment-controls.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/dragger.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/extender-background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/extender-dragger.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/frame.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/glowbar.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/line.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/lineedit.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/media-delegate.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/monitor.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/pager.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/panel-background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/plot-background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/scrollbar.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/scrollwidget.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/slider.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/tabbar.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/tasks.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/timer.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/tooltip.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/translucentbackground.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/viewitem.svgz
+%{_datadir}/kstyle/themes/oxygen.themerc
+%{_datadir}/plasma/desktoptheme/oxygen
+%{_datadir}/plasma/look-and-feel/org.kde.oxygen
+%{_desktopdir}/kcm_oxygendecoration.desktop
+%{_iconsdir}/hicolor/256x256/apps/oxygen-settings.png
+%{_iconsdir}/KDE_Classic
+%{_iconsdir}/Oxygen_Black
+%{_iconsdir}/Oxygen_Blue
+%{_iconsdir}/Oxygen_White
+%{_iconsdir}/Oxygen_Yellow
+%{_iconsdir}/Oxygen_Zion
