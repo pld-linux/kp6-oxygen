@@ -2,8 +2,9 @@
 # Conditional build:
 %bcond_with	tests		# test suite
 
-%define		kdeplasmaver	6.3.5
-%define		qtver		5.15.2
+%define		kf_ver		6.10.0
+%define		kp_ver		%{version}
+%define		qt_ver		6.7.0
 %define		kpname		oxygen
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and 6
 Summary(pl.UTF-8):	Styl Plasmy i widżetów Qt oraz dekoracje okien dla Plasmy 5 i 6
@@ -12,28 +13,55 @@ Version:	6.3.5
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+Source0:	https://download.kde.org/stable/plasma/%{version}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	82ea0985cdd21f1051f5289bb3dea39d
 URL:		https://kde.org/
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	cmake >= 3.16.0
-BuildRequires:	kf6-extra-cmake-modules >= 1.4.0
-BuildRequires:	kf6-frameworkintegration-devel
-BuildRequires:	kf6-kcompletion-devel
-BuildRequires:	kf6-kconfig-devel
-BuildRequires:	kf6-kguiaddons-devel
-BuildRequires:	kf6-ki18n-devel
-BuildRequires:	kf6-kservice-devel
-BuildRequires:	kf6-kwidgetsaddons-devel
-BuildRequires:	kf6-kwindowsystem-devel
-BuildRequires:	kp6-libplasma-devel >= %{version}
+BuildRequires:	Qt6Core-devel >= %{qt_ver}
+BuildRequires:	Qt6DBus-devel >= %{qt_ver}
+BuildRequires:	Qt6Gui-devel >= %{qt_ver}
+BuildRequires:	Qt6Network-devel >= %{qt_ver}
+BuildRequires:	Qt6OpenGL-devel >= %{qt_ver}
+BuildRequires:	Qt6Quick-devel >= %{qt_ver}
+BuildRequires:	Qt6Widgets-devel >= %{qt_ver}
+BuildRequires:	cmake >= 3.25
+BuildRequires:	kf6-extra-cmake-modules >= 5.102.0
+BuildRequires:	kf6-frameworkintegration-devel >= %{kf_ver}
+BuildRequires:	kf6-kcmutils-devel >= %{kf_ver}
+BuildRequires:	kf6-kcolorscheme-devel >= %{kf_ver}
+BuildRequires:	kf6-kcompletion-devel >= %{kf_ver}
+BuildRequires:	kf6-kconfig-devel >= %{kf_ver}
+BuildRequires:	kf6-kcoreaddons-devel >= %{kf_ver}
+BuildRequires:	kf6-kdecoration-devel >= %{kf_ver}
+BuildRequires:	kf6-kguiaddons-devel >= %{kf_ver}
+BuildRequires:	kf6-ki18n-devel >= %{kf_ver}
+BuildRequires:	kf6-kservice-devel >= %{kf_ver}
+BuildRequires:	kf6-kwidgetsaddons-devel >= %{kf_ver}
+BuildRequires:	kf6-kwindowsystem-devel >= %{kf_ver}
+BuildRequires:	kp6-libplasma-devel >= %{kp_ver}
+BuildRequires:	libstdc++-devel >= 6:8
 BuildRequires:	ninja
-BuildRequires:	qt6-build >= %{qtver}
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	qt6-build >= %{qt_ver}
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
-Obsoletes:	kp5-%{kpname} < 6
+Requires:	Qt6Core >= %{qt_ver}
+Requires:	Qt6DBus >= %{qt_ver}
+Requires:	Qt6Gui >= %{qt_ver}
+Requires:	Qt6Quick >= %{qt_ver}
+Requires:	Qt6Widgets >= %{qt_ver}
+Requires:	kf6-frameworkintegration >= %{kf_ver}
+Requires:	kf6-kcmutils >= %{kf_ver}
+Requires:	kf6-kcolorscheme >= %{kf_ver}
+Requires:	kf6-kcompletion >= %{kf_ver}
+Requires:	kf6-kconfig >= %{kf_ver}
+Requires:	kf6-kcoreaddons >= %{kf_ver}
+Requires:	kf6-kdecoration >= %{kf_ver}
+Requires:	kf6-kguiaddons >= %{kf_ver}
+Requires:	kf6-ki18n >= %{kf_ver}
+Requires:	kf6-kwidgetsaddons >= %{kf_ver}
+Requires:	kf6-kwindowsystem >= %{kf_ver}
+Obsoletes:	kp5-oxygen < 6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,19 +69,6 @@ Plasma and Qt widget style and window decorations for Plasma 5 and 6.
 
 %description -l pl.UTF-8
 Styl Plasmy i widżetów Qt oraz dekoracje okien dla Plasmy 5 i 6.
-
-%package devel
-Summary:	Header files for %{kpname} development
-Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
-Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-Obsoletes:	kp5-%{kpname}-devel < %{version}
-
-%description devel
-Header files for %{kpname} development.
-
-%description devel -l pl.UTF-8
-Pliki nagłówkowe dla programistów używających %{kpname}.
 
 %prep
 %setup -q -n %{kpname}-%{version}
@@ -111,10 +126,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/desktoptheme/oxygen
 %{_datadir}/plasma/look-and-feel/org.kde.oxygen
 %{_desktopdir}/kcm_oxygendecoration.desktop
-%{_iconsdir}/hicolor/256x256/apps/oxygen-settings.png
 %{_iconsdir}/KDE_Classic
 %{_iconsdir}/Oxygen_Black
 %{_iconsdir}/Oxygen_Blue
 %{_iconsdir}/Oxygen_White
 %{_iconsdir}/Oxygen_Yellow
 %{_iconsdir}/Oxygen_Zion
+%{_iconsdir}/hicolor/256x256/apps/oxygen-settings.png
