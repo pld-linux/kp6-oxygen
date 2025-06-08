@@ -10,7 +10,7 @@ Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and 6
 Summary(pl.UTF-8):	Styl Plasmy i widżetów Qt oraz dekoracje okien dla Plasmy 5 i 6
 Name:		kp6-%{kpname}
 Version:	6.3.5
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{version}/%{kpname}-%{version}.tar.xz
@@ -60,7 +60,8 @@ Requires:	kf6-kguiaddons >= %{kf_ver}
 Requires:	kf6-ki18n >= %{kf_ver}
 Requires:	kf6-kwidgetsaddons >= %{kf_ver}
 Requires:	kf6-kwindowsystem >= %{kf_ver}
-Requires:	kp6-kdecoration >= %{kf_ver}
+Requires:	kp6-kdecoration >= %{kp_ver}
+Requires:	kp6-libplasma >= %{kp_ver}
 Provides:	kf5-plasma-desktoptheme-oxygen = %{version}-%{release}
 Obsoletes:	kf5-plasma-desktoptheme-oxygen < 6
 Obsoletes:	kp5-oxygen < 6
