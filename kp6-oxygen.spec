@@ -31,12 +31,12 @@ BuildRequires:	kf6-kcolorscheme-devel >= %{kf_ver}
 BuildRequires:	kf6-kcompletion-devel >= %{kf_ver}
 BuildRequires:	kf6-kconfig-devel >= %{kf_ver}
 BuildRequires:	kf6-kcoreaddons-devel >= %{kf_ver}
-BuildRequires:	kf6-kdecoration-devel >= %{kf_ver}
 BuildRequires:	kf6-kguiaddons-devel >= %{kf_ver}
 BuildRequires:	kf6-ki18n-devel >= %{kf_ver}
 BuildRequires:	kf6-kservice-devel >= %{kf_ver}
 BuildRequires:	kf6-kwidgetsaddons-devel >= %{kf_ver}
 BuildRequires:	kf6-kwindowsystem-devel >= %{kf_ver}
+BuildRequires:	kp6-kdecoration-devel >= %{kp_ver}
 BuildRequires:	kp6-libplasma-devel >= %{kp_ver}
 BuildRequires:	libstdc++-devel >= 6:8
 BuildRequires:	ninja
@@ -56,11 +56,11 @@ Requires:	kf6-kcolorscheme >= %{kf_ver}
 Requires:	kf6-kcompletion >= %{kf_ver}
 Requires:	kf6-kconfig >= %{kf_ver}
 Requires:	kf6-kcoreaddons >= %{kf_ver}
-Requires:	kf6-kdecoration >= %{kf_ver}
 Requires:	kf6-kguiaddons >= %{kf_ver}
 Requires:	kf6-ki18n >= %{kf_ver}
 Requires:	kf6-kwidgetsaddons >= %{kf_ver}
 Requires:	kf6-kwindowsystem >= %{kf_ver}
+Requires:	kp6-kdecoration >= %{kf_ver}
 Provides:	kf5-plasma-desktoptheme-oxygen = %{version}-%{release}
 Obsoletes:	kf5-plasma-desktoptheme-oxygen < 6
 Obsoletes:	kp5-oxygen < 6
