@@ -9,12 +9,12 @@
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and 6
 Summary(pl.UTF-8):	Styl Plasmy i widżetów Qt oraz dekoracje okien dla Plasmy 5 i 6
 Name:		kp6-%{kpname}
-Version:	6.4.4
+Version:	6.4.5
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{version}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	8bcecf5327af741a21af37a93901fd35
+# Source0-md5:	5e9226d9e00fa00340249c45f4a6ebfa
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6DBus-devel >= %{qt_ver}
@@ -45,7 +45,6 @@ BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
-Requires:	Qt6Core >= %{qt_ver}
 Requires:	Qt6DBus >= %{qt_ver}
 Requires:	Qt6Gui >= %{qt_ver}
 Requires:	Qt6Quick >= %{qt_ver}
@@ -62,6 +61,7 @@ Requires:	kf6-kwidgetsaddons >= %{kf_ver}
 Requires:	kf6-kwindowsystem >= %{kf_ver}
 Requires:	kp6-kdecoration >= %{kp_ver}
 Requires:	kp6-libplasma >= %{kp_ver}
+%requires_eq_to Qt6Core Qt6Core-devel
 Provides:	kf5-plasma-desktoptheme-oxygen = %{version}-%{release}
 Obsoletes:	kf5-plasma-desktoptheme-oxygen < 6
 Obsoletes:	kp5-oxygen < 6
