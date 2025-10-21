@@ -9,12 +9,12 @@
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and 6
 Summary(pl.UTF-8):	Styl Plasmy i widżetów Qt oraz dekoracje okien dla Plasmy 5 i 6
 Name:		kp6-%{kpname}
-Version:	6.4.5
-Release:	3
+Version:	6.5.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{version}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	5e9226d9e00fa00340249c45f4a6ebfa
+# Source0-md5:	849d9b737ca3a627123b3714966bfb62
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6DBus-devel >= %{qt_ver}
@@ -114,15 +114,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/oxygen-demo6
 %attr(755,root,root) %{_bindir}/oxygen-settings6
-%attr(755,root,root) %{_libdir}/liboxygenstyle6.so.*.*
+%{_libdir}/liboxygenstyle6.so.*.*
 %ghost %{_libdir}/liboxygenstyle6.so.6
-%attr(755,root,root) %{_libdir}/liboxygenstyleconfig6.so.*.*
+%{_libdir}/liboxygenstyleconfig6.so.*.*
 %ghost %{_libdir}/liboxygenstyleconfig6.so.6
 %dir %{_libdir}/qt6/plugins/kstyle_config
-%attr(755,root,root) %{_libdir}/qt6/plugins/kstyle_config/kstyle_oxygen_config.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration3/org.kde.oxygen.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/org.kde.kdecoration3.kcm/kcm_oxygendecoration.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/styles/oxygen6.so
+%{_libdir}/qt6/plugins/kstyle_config/kstyle_oxygen_config.so
+%{_libdir}/qt6/plugins/org.kde.kdecoration3/org.kde.oxygen.so
+%{_libdir}/qt6/plugins/org.kde.kdecoration3.kcm/kcm_oxygendecoration.so
+%{_libdir}/qt6/plugins/styles/oxygen6.so
 %{_datadir}/color-schemes/Oxygen.colors
 %{_datadir}/color-schemes/OxygenCold.colors
 %{_datadir}/metainfo/org.kde.oxygen.appdata.xml
