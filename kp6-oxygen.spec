@@ -9,12 +9,12 @@
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and 6
 Summary(pl.UTF-8):	Styl Plasmy i widżetów Qt oraz dekoracje okien dla Plasmy 5 i 6
 Name:		kp6-%{kpname}
-Version:	6.6.4
-Release:	2
+Version:	6.6.5
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{version}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	a85dcdb26b7126998074878cba59f893
+# Source0-md5:	66609e0e0291b15bbd98eabf7184204f
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6DBus-devel >= %{qt_ver}
