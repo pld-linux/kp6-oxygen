@@ -9,12 +9,12 @@
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and 6
 Summary(pl.UTF-8):	Styl Plasmy i widżetów Qt oraz dekoracje okien dla Plasmy 5 i 6
 Name:		kp6-%{kpname}
-Version:	6.6.5
+Version:	6.7.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{version}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	66609e0e0291b15bbd98eabf7184204f
+# Source0-md5:	4f1d8e95295c097adba3d1d835f7503f
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6DBus-devel >= %{qt_ver}
@@ -125,10 +125,18 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/plugins/styles/oxygen6.so
 %{_datadir}/color-schemes/Oxygen.colors
 %{_datadir}/color-schemes/OxygenCold.colors
+%{_datadir}/color-schemes/OxygenDark.colors
 %{_datadir}/metainfo/org.kde.oxygen.appdata.xml
+%{_datadir}/metainfo/org.kde.air.appdata.xml
+%{_datadir}/metainfo/org.kde.oxygenlight.appdata.xml
 %{_datadir}/kstyle/themes/oxygen.themerc
+%{_datadir}/plasma/desktoptheme/air
 %{_datadir}/plasma/desktoptheme/oxygen
+%{_datadir}/plasma/look-and-feel/org.kde.air
 %{_datadir}/plasma/look-and-feel/org.kde.oxygen
+%{_datadir}/plasma/look-and-feel/org.kde.oxygenlight
+%{_datadir}/wallpapers/Air
+%{_datadir}/wallpapers/Horos
 %{_desktopdir}/kcm_oxygendecoration.desktop
 %{_iconsdir}/KDE_Classic
 %{_iconsdir}/Oxygen_Black
